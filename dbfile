@@ -1,0 +1,12 @@
+INSERT INTO question_bank (category, difficultylevel, option1, option2, option3, option4, question_title, right_answer)
+VALUES
+    ('JAVA', 'Easy', 'class', 'interface', 'extends', 'implements', 'Which Java keyword is used to create a subclass?', 'extends'),
+    ('JAVA', 'Medium', 'this', 'super', 'final', 'static', 'Which Java keyword is used to refer to the parent class constructor?', 'super'),
+    ('Python', 'Easy', 'def', 'function', 'lambda', 'method', 'Which keyword is used to define a function in Python?', 'def'),
+    ('Python', 'Medium', 'list', 'dictionary', 'tuple', 'set', 'Which data structure in Python is immutable?', 'tuple'),
+    ('C++', 'Easy', 'class', 'structure', 'union', 'namespace', 'Which keyword is used to define a class in C++?', 'class'),
+    ('C++', 'Medium', 'public', 'private', 'protected', 'default', 'Which access specifier is used for inheritance in C++?', 'protected'),
+    ('SQL', 'Easy', 'SELECT', 'INSERT', 'UPDATE', 'DELETE', 'Which SQL statement is used to retrieve data from a database?', 'SELECT'),
+    ('SQL', 'Medium', 'JOIN', 'UNION', 'INTERSECT', 'EXCEPT', 'Which SQL clause is used to combine rows from two or more tables?', 'JOIN'),
+    ('JavaScript', 'Easy', 'var', 'const', 'let', 'static', 'Which keyword is used to declare a variable in JavaScript?', 'let'),
+    ('JavaScript', 'Medium', 'promise', 'callback', 'async', 'await', 'Which keyword is used to pause a function in JavaScript?', 'await');
