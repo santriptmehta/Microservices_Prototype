@@ -3,9 +3,9 @@ package com.blankSpace.StudentQuiz.Controller;
 import com.blankSpace.StudentQuiz.Entity.Question;
 import com.blankSpace.StudentQuiz.Service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,10 +13,25 @@ import java.util.List;
 @RequestMapping("question")
 public class QuestionController {
     @Autowired
-    QuestionService questionService;
+    private QuestionService questionService;
 
     @GetMapping("/getQuestion")
-    public List<Question> getAllQuestion() {
-        return questionService.getAllQuestion();
+    public ResponseEntity<List<Question>> getAllQuestion() {
+        return questionService.getAllQuestions();
+    }
+
+    @GetMapping("category/{category}")
+    public ResponseEntity<List<Question>> getQuestionCategory(@PathVariable String category) {
+        return questionService.getQuestionByCategory(category);
+    }
+
+    @PostMapping("/postQuestion")
+    public ResponseEntity<Question> postQuestion(@RequestBody Question question) {
+        return questionService.postQuestion(question);
+    }
+
+    @DeleteMapping("/deleteQuestion/{id}")
+    public String deleteQuestion(@PathVariable String id) {
+        return questionService.deleteQuestion(id);
     }
 }
