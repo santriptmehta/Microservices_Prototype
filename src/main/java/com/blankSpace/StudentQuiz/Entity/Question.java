@@ -1,35 +1,42 @@
 package com.blankSpace.StudentQuiz.Entity;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.Getter;
 
 
-@Document(collection = "question_bank")
+@Entity
+@Table(name = "question_bank")
 public class Question {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private String category;
-    private String difficultyLevel;
+    private String difficultylevel;
     private String option1;
     private String option2;
     private String option3;
     private String option4;
-    private String questionTitle;
-    private String rightAnswer;
+    private String question_title;
+    private String right_answer;
 
-    public Question(String id, String category, String difficultyLevel, String option1, String option2, String option3, String option4, String questionTitle, String rightAnswer) {
+    public Question() {
+    }
+
+    public Question(Integer id, String category, String difficultylevel, String option1, String option2, String option3, String option4, String question_title, String right_answer) {
         this.id = id;
         this.category = category;
-        this.difficultyLevel = difficultyLevel;
+        this.difficultylevel = difficultylevel;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.option4 = option4;
-        this.questionTitle = questionTitle;
-        this.rightAnswer = rightAnswer;
+        this.question_title = question_title;
+        this.right_answer = right_answer;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -37,8 +44,8 @@ public class Question {
         return category;
     }
 
-    public String getDifficultyLevel() {
-        return difficultyLevel;
+    public String getDifficultylevel() {
+        return difficultylevel;
     }
 
     public String getOption1() {
@@ -57,11 +64,47 @@ public class Question {
         return option4;
     }
 
-    public String getQuestionTitle() {
-        return questionTitle;
+    public String getQuestion_title() {
+        return question_title;
     }
 
-    public String getRightAnswer() {
-        return rightAnswer;
+    public String getRight_answer() {
+        return right_answer;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setDifficultylevel(String difficultylevel) {
+        this.difficultylevel = difficultylevel;
+    }
+
+    public void setOption1(String option1) {
+        this.option1 = option1;
+    }
+
+    public void setOption2(String option2) {
+        this.option2 = option2;
+    }
+
+    public void setOption3(String option3) {
+        this.option3 = option3;
+    }
+
+    public void setOption4(String option4) {
+        this.option4 = option4;
+    }
+
+    public void setQuestion_title(String question_title) {
+        this.question_title = question_title;
+    }
+
+    public void setRight_answer(String right_answer) {
+        this.right_answer = right_answer;
     }
 }

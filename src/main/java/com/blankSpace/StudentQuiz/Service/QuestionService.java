@@ -4,7 +4,6 @@ import com.blankSpace.StudentQuiz.DAO.QuestionDAO;
 import com.blankSpace.StudentQuiz.Entity.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +45,7 @@ public class QuestionService {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
-    public String deleteQuestion(String id) {
+    public String deleteQuestion(Integer id) {
         questionDAO.deleteById(id);
         return "Successfully deleted";
     }
